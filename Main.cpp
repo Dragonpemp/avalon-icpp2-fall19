@@ -2,7 +2,7 @@
 #include "Header.h"
 
 
-	//Returns the index of the last element (\0).
+
 	int lenth(char_array s)
 	{
 		int out = 0;
@@ -13,7 +13,7 @@
 		return out;
 	}
 
-	//Concatenates two char arrays and renames first pointer to the new char array.
+
 	void concatenate(char_array &first, char_array second)
 	{
 		char_array out = new char[lenth(first) + lenth(second) - 1];
@@ -27,25 +27,17 @@
 		{
 			out[lenth(first) + i] = second[i];
 		}
-
-		/*
-		for (int i = len(first); i < len(first)+len(second); ++i)
-		{
-			out[i] = second[i-len(first)];
-		}*/
 		out[lenth(first) + lenth(second)] = '\0';
 		delete[] first;
 		first = out;
 	}
 
-	//Returns character given counting from 1.
 	char characterAt(char_array s, int position)
 	{
 		if ((position <= 0) || (position > lenth(s))) { s[0]; }
 		else { return s[position - 1]; }
 	}
 
-	//Append the char in the end of array and renames pointer to the new char array.
 	void append(char_array &s, char input)
 	{
 		char_array out = new char[lenth(s) + 2];
@@ -59,7 +51,7 @@
 		s = out;
 	}
 
-	//Return new array which contains first "length" symbols from "start"(counting from 1).
+
 	char_array substring(char_array& s, int start, int length)
 	{
 		char_array out = new char[length];
@@ -73,7 +65,7 @@
 
 int main()
 {
-	//setlocale(0, "");
+	setlocale(0, "");
 	char_array first = new char[6]{ "first" };
 	char_array second = new char[8]{ " second" };
 	concatenate(first, second);
